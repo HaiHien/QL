@@ -27,3 +27,20 @@ C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmed
 C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmlistcustomer.resources
 C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmimportexcelcustomershopping.resources
 C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmimportexcellistcustomer.resources
+E:\QL\QLBH\obj\Debug\QLBH.exe
+E:\QL\QLBH\obj\Debug\QLBH.pdb
+E:\QL\QLBH\bin\Debug\QLBH.exe
+E:\QL\QLBH\bin\Debug\QLBH.pdb
+E:\QL\QLBH\bin\Debug\SQLite.Designer.dll
+E:\QL\QLBH\bin\Debug\SQLite.Designer.pdb
+E:\QL\QLBH\obj\Debug\ResolveAssemblyReference.cache
+E:\QL\QLBH\obj\Debug\QLBH.frmaddshopping.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmeditshopping.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmimportexcelcustomershopping.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmlistcustomer.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmeditcustomer.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmpurchaseinformation.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmimportexcellistcustomer.resources
+E:\QL\QLBH\obj\Debug\QLBH.Properties.Resources.resources
+E:\QL\QLBH\obj\Debug\QLBH.frmaddcustomer.resources
+E:\QL\QLBH\obj\Debug\QLBH.csproj.GenerateResource.Cache
