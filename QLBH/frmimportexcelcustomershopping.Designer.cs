@@ -71,6 +71,7 @@
             this.Controls.Add(this.txtpath);
             this.Name = "frmimportexcelcustomershopping";
             this.Text = "frmimportexcelcustomershopping";
+            this.Load += new System.EventHandler(this.frmimportexcelcustomershopping_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

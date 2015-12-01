@@ -150,5 +150,10 @@ namespace QLBH
             frmlistcustomer frm = new frmlistcustomer();
             frm.Show();
         }
+
+        private void frmimportexcelcustomershopping_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
