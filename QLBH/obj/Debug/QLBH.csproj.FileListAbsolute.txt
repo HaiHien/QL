@@ -1,0 +1,29 @@
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.frmdanhsachKH.resources
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.Properties.Resources.resources
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.csproj.GenerateResource.Cache
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\bin\Debug\QLBH.exe
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\bin\Debug\QLBH.pdb
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\bin\Debug\SQLite.Designer.dll
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\bin\Debug\SQLite.Designer.pdb
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.exe
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.pdb
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.frmthemkh.resources
+C:\Users\PC\AppData\Local\Temporary Projects\QLBH\obj\Debug\QLBH.frminfomationcustomer.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.exe
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.pdb
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.Properties.Resources.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\bin\Debug\QLBH.exe
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\bin\Debug\QLBH.pdb
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\bin\Debug\SQLite.Designer.dll
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\bin\Debug\SQLite.Designer.pdb
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmeditcustomer.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmpurchaseinformation.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmaddcustomer.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmaddshopping.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmeditshopping.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmlistcustomer.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmimportexcelcustomershopping.resources
+C:\Users\PC\Documents\Visual Studio 2008\Projects\QLBH\QLBH\obj\Debug\QLBH.frmimportexcellistcustomer.resources

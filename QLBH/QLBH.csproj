@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A78E1525-FF67-46A7-9DD5-3C5278F672A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLBH</RootNamespace>
+    <AssemblyName>QLBH</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="SQLite.Designer, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customershopping.cs" />
+    <Compile Include="frmaddshopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddshopping.Designer.cs">
+      <DependentUpon>frmaddshopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmeditshopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeditshopping.Designer.cs">
+      <DependentUpon>frmeditshopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmimportexcelcustomershopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmimportexcelcustomershopping.Designer.cs">
+      <DependentUpon>frmimportexcelcustomershopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmlistcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlistcustomer.Designer.cs">
+      <DependentUpon>frmlistcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmeditcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeditcustomer.Designer.cs">
+      <DependentUpon>frmeditcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmpurchaseinformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmpurchaseinformation.Designer.cs">
+      <DependentUpon>frmpurchaseinformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmimportexcellistcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmimportexcellistcustomer.Designer.cs">
+      <DependentUpon>frmimportexcellistcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListCustomer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmaddshopping.resx">
+      <DependentUpon>frmaddshopping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmeditshopping.resx">
+      <DependentUpon>frmeditshopping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmimportexcelcustomershopping.resx">
+      <DependentUpon>frmimportexcelcustomershopping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlistcustomer.resx">
+      <DependentUpon>frmlistcustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmeditcustomer.resx">
+      <DependentUpon>frmeditcustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmpurchaseinformation.resx">
+      <DependentUpon>frmpurchaseinformation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmimportexcellistcustomer.resx">
+      <DependentUpon>frmimportexcellistcustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaddcustomer.resx">
+      <DependentUpon>frmaddcustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmaddcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmaddcustomer.Designer.cs">
+      <DependentUpon>frmaddcustomer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
