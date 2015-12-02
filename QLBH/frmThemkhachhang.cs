@@ -10,10 +10,10 @@ using System.Data.SQLite;
 
 namespace QLBH
 {
-    public partial class frmaddcustomer : Form
+    public partial class frmThemkhachhang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
-        public frmaddcustomer()
+        public frmThemkhachhang()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace QLBH
             string str = "";
             if (name.Trim().Length == 0)
             {
-                lbln.Text = "must enter the name";
+                lbln.Text = "Phải Nhập Tên!";
                 lbln.Visible = true;
                 str += "n";
             }
@@ -49,13 +49,13 @@ namespace QLBH
             }
             if (phone.Trim().Length == 0)
             {
-                lblp.Text = "must enter the Phone";
+                lblp.Text = "Phải Nhập Số Điện Thoại!";
                 lblp.Visible = true;
                 str += "p";
             }
             else if (phone.Trim().Length > 13)
             {
-                lblp.Text = "phone number must be less than 13 numbers";
+                lblp.Text = "Số Điện Thoại Phải Ít Hơn 13 Số!";
                 lblp.Visible = true;
                 str += "p";
             }
@@ -66,17 +66,17 @@ namespace QLBH
                 if (str.Trim().Length == 0)
                 {
                     ListCustomer list = new ListCustomer();
-                    int i = list.AddCustomer(name, int.Parse(phone), gender, address);
+                    int i = list.AddCustomer(name,phone, gender, address);
                     if (i > 0)
                     {
-                        MessageBox.Show("Insert Ok!");
+                        MessageBox.Show("Thêm Mới Thành Công!");
                         this.Hide();
-                        frmlistcustomer frm = new frmlistcustomer();
+                        frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
                         frm.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Insert Not Ok!");
+                        MessageBox.Show("lỗi Không Thể Thêm Mới!");
                     }
                  
                 }
@@ -91,7 +91,7 @@ namespace QLBH
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmlistcustomer frm = new frmlistcustomer();
+            frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
             frm.Show();
         }
     }

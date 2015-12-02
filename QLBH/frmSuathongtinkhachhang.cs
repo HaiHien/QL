@@ -10,7 +10,7 @@ using System.Data.SQLite;
 
 namespace QLBH
 {
-    public partial class frmeditcustomer : Form
+    public partial class frmSuathongtinkhachhang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         public int id;
@@ -18,7 +18,7 @@ namespace QLBH
         public string phone;
         public string gender;
         public string address;
-        public frmeditcustomer()
+        public frmSuathongtinkhachhang()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace QLBH
             string str = "";
             if (name.Trim().Length == 0)
             {
-                lbln.Text = "must enter the name";
+                lbln.Text = "Phải Nhập Tên!";
                 lbln.Visible = true;
                 str += "n";
             }
@@ -54,13 +54,13 @@ namespace QLBH
             }
             if (phone.Trim().Length == 0)
             {
-                lblp.Text = "must enter the Phone";
+                lblp.Text = "Phải Nhập Số Điện Thoại!";
                 lblp.Visible = true;
                 str += "p";
             }
             else if (phone.Trim().Length > 13)
             {
-                lblp.Text = "phone number must be less than 13 numbers";
+                lblp.Text = "Số Điện Thoại Phải Ít Hơn 13 Số!";
                 lblp.Visible = true;
                 str += "p";
             }
@@ -71,17 +71,17 @@ namespace QLBH
             if (str.Trim().Length == 0)
             {
                 ListCustomer list = new ListCustomer();
-                    int i = list.UpdateCustomerByID(id,name,gender,int.Parse(phone),address);
+                    int i = list.UpdateCustomerByID(id,name,gender,phone,address);
                     if (i > 0)
                     {
-                        MessageBox.Show("Update OK!");
+                        MessageBox.Show("Sửa Thành Công!");
                         this.Hide();
-                        frmlistcustomer frm = new frmlistcustomer();
+                        frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
                         frm.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Update Not OK!");
+                        MessageBox.Show("Lỗi Không Thể Sửa!");
                     }
                 
             }
@@ -109,7 +109,7 @@ namespace QLBH
 
         private void btncancel_Click(object sender, EventArgs e)
         {
-            frmlistcustomer frm = new frmlistcustomer();
+            frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
             this.Hide();
             frm.Show();
             

@@ -29,7 +29,7 @@ namespace QLBH
             }
             return 1;
         }
-        public int UpdateCustomerByID(int id,string name,string gender,int phone,string address)
+        public int UpdateCustomerByID(int id,string name,string gender,string phone,string address)
         {
             string sql = "update Listcustomer set Name=@name,Phone=@phone,Gender=@gender,Address=@address where ID=@id";
             try
@@ -53,7 +53,7 @@ namespace QLBH
             }
             return 1;
         }
-        public int AddCustomer(string name, int phone, string gender , string address)
+        public int AddCustomer(string name, string phone, string gender , string address)
         {
             string sql = "insert into Listcustomer (Name,Phone,Gender,Address) values(@name,@phone,@gender,@address)";
             try

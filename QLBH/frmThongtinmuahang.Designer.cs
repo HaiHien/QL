@@ -1,6 +1,6 @@
 ﻿namespace QLBH
 {
-    partial class frmpurchaseinformation
+    partial class frmThongtinmuahang
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             this.btnedit = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbgender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgmuahang)).BeginInit();
             this.SuspendLayout();
@@ -51,59 +52,61 @@
             // txtname
             // 
             this.txtname.Enabled = false;
-            this.txtname.Location = new System.Drawing.Point(114, 34);
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Location = new System.Drawing.Point(148, 85);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(225, 26);
+            this.txtname.Size = new System.Drawing.Size(225, 28);
             this.txtname.TabIndex = 0;
             // 
             // txtaddress
             // 
             this.txtaddress.Enabled = false;
-            this.txtaddress.Location = new System.Drawing.Point(557, 94);
+            this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress.Location = new System.Drawing.Point(533, 134);
             this.txtaddress.Multiline = true;
             this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(225, 26);
+            this.txtaddress.Size = new System.Drawing.Size(225, 28);
             this.txtaddress.TabIndex = 3;
             // 
             // lblname
             // 
             this.lblname.AutoSize = true;
             this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(13, 46);
+            this.lblname.Location = new System.Drawing.Point(12, 95);
             this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(83, 18);
+            this.lblname.Size = new System.Drawing.Size(126, 18);
             this.lblname.TabIndex = 4;
-            this.lblname.Text = "Full Name :";
+            this.lblname.Text = "Tên Khách Hàng :";
             // 
             // lblgender
             // 
             this.lblgender.AutoSize = true;
             this.lblgender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgender.Location = new System.Drawing.Point(18, 108);
+            this.lblgender.Location = new System.Drawing.Point(12, 140);
             this.lblgender.Name = "lblgender";
-            this.lblgender.Size = new System.Drawing.Size(57, 18);
+            this.lblgender.Size = new System.Drawing.Size(75, 18);
             this.lblgender.TabIndex = 6;
-            this.lblgender.Text = "Gender";
+            this.lblgender.Text = "Giới Tính :";
             // 
             // lbladdress
             // 
             this.lbladdress.AutoSize = true;
             this.lbladdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdress.Location = new System.Drawing.Point(456, 102);
+            this.lbladdress.Location = new System.Drawing.Point(405, 140);
             this.lbladdress.Name = "lbladdress";
-            this.lbladdress.Size = new System.Drawing.Size(62, 18);
+            this.lbladdress.Size = new System.Drawing.Size(64, 18);
             this.lbladdress.TabIndex = 7;
-            this.lbladdress.Text = "Address";
+            this.lbladdress.Text = "Địa Chỉ :";
             // 
             // grbgender
             // 
             this.grbgender.Controls.Add(this.rdbfemale);
             this.grbgender.Controls.Add(this.rdbmale);
             this.grbgender.Enabled = false;
-            this.grbgender.Location = new System.Drawing.Point(119, 90);
+            this.grbgender.Location = new System.Drawing.Point(153, 122);
             this.grbgender.Name = "grbgender";
-            this.grbgender.Size = new System.Drawing.Size(200, 36);
+            this.grbgender.Size = new System.Drawing.Size(220, 36);
             this.grbgender.TabIndex = 8;
             this.grbgender.TabStop = false;
             // 
@@ -112,10 +115,10 @@
             this.rdbfemale.AutoSize = true;
             this.rdbfemale.Location = new System.Drawing.Point(111, 13);
             this.rdbfemale.Name = "rdbfemale";
-            this.rdbfemale.Size = new System.Drawing.Size(60, 17);
+            this.rdbfemale.Size = new System.Drawing.Size(39, 17);
             this.rdbfemale.TabIndex = 1;
             this.rdbfemale.TabStop = true;
-            this.rdbfemale.Text = "FeMale";
+            this.rdbfemale.Text = "Nữ";
             this.rdbfemale.UseVisualStyleBackColor = true;
             // 
             // rdbmale
@@ -123,10 +126,10 @@
             this.rdbmale.AutoSize = true;
             this.rdbmale.Location = new System.Drawing.Point(17, 13);
             this.rdbmale.Name = "rdbmale";
-            this.rdbmale.Size = new System.Drawing.Size(48, 17);
+            this.rdbmale.Size = new System.Drawing.Size(47, 17);
             this.rdbmale.TabIndex = 0;
             this.rdbmale.TabStop = true;
-            this.rdbmale.Text = "Male";
+            this.rdbmale.Text = "Nam";
             this.rdbmale.UseVisualStyleBackColor = true;
             // 
             // dtgmuahang
@@ -136,86 +139,104 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgmuahang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgmuahang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgmuahang.Location = new System.Drawing.Point(1, 243);
+            this.dtgmuahang.Location = new System.Drawing.Point(1, 224);
             this.dtgmuahang.Name = "dtgmuahang";
             this.dtgmuahang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgmuahang.Size = new System.Drawing.Size(848, 249);
+            this.dtgmuahang.Size = new System.Drawing.Size(1028, 342);
             this.dtgmuahang.TabIndex = 9;
             // 
             // lblphone
             // 
             this.lblphone.AutoSize = true;
             this.lblphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblphone.Location = new System.Drawing.Point(456, 46);
+            this.lblphone.Location = new System.Drawing.Point(405, 95);
             this.lblphone.Name = "lblphone";
-            this.lblphone.Size = new System.Drawing.Size(51, 18);
+            this.lblphone.Size = new System.Drawing.Size(110, 18);
             this.lblphone.TabIndex = 11;
-            this.lblphone.Text = "Phone";
+            this.lblphone.Text = "Số Điện Thoại :";
             // 
             // txtphone
             // 
             this.txtphone.Enabled = false;
-            this.txtphone.Location = new System.Drawing.Point(557, 38);
+            this.txtphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtphone.Location = new System.Drawing.Point(533, 85);
             this.txtphone.Multiline = true;
             this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(225, 26);
+            this.txtphone.Size = new System.Drawing.Size(225, 28);
             this.txtphone.TabIndex = 10;
             // 
             // btnimport
             // 
-            this.btnimport.Location = new System.Drawing.Point(397, 175);
+            this.btnimport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnimport.Location = new System.Drawing.Point(391, 174);
             this.btnimport.Name = "btnimport";
-            this.btnimport.Size = new System.Drawing.Size(75, 32);
+            this.btnimport.Size = new System.Drawing.Size(163, 32);
             this.btnimport.TabIndex = 15;
-            this.btnimport.Text = "Import";
+            this.btnimport.Text = "Import Dữ liệu Từ Excel";
             this.btnimport.UseVisualStyleBackColor = true;
             this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
             // 
             // Btndelete
             // 
-            this.Btndelete.Location = new System.Drawing.Point(207, 175);
+            this.Btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btndelete.Location = new System.Drawing.Point(201, 174);
             this.Btndelete.Name = "Btndelete";
             this.Btndelete.Size = new System.Drawing.Size(75, 32);
             this.Btndelete.TabIndex = 14;
-            this.Btndelete.Text = "Delete";
+            this.Btndelete.Text = "Xóa";
             this.Btndelete.UseVisualStyleBackColor = true;
             this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // btnedit
             // 
-            this.btnedit.Location = new System.Drawing.Point(115, 175);
+            this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnedit.Location = new System.Drawing.Point(109, 174);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(75, 32);
             this.btnedit.TabIndex = 13;
-            this.btnedit.Text = "Edit";
+            this.btnedit.Text = "Sửa";
             this.btnedit.UseVisualStyleBackColor = true;
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(21, 175);
+            this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Location = new System.Drawing.Point(15, 174);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 32);
             this.btnadd.TabIndex = 12;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "Thêm";
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(304, 175);
+            this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(298, 174);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 32);
             this.btnback.TabIndex = 16;
-            this.btnback.Text = "Back";
+            this.btnback.Text = "Quay Lại";
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // frmpurchaseinformation
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(355, 39);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Thông Tin Mua Hàng";
+            // 
+            // frmThongtinmuahang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 491);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1031, 628);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnimport);
             this.Controls.Add(this.Btndelete);
@@ -230,8 +251,9 @@
             this.Controls.Add(this.lblname);
             this.Controls.Add(this.txtaddress);
             this.Controls.Add(this.txtname);
-            this.Name = "frmpurchaseinformation";
-            this.Text = "infomationcustomer";
+            this.Name = "frmThongtinmuahang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thông Tin Mua Hàng";
             this.Load += new System.EventHandler(this.frminfomationcustomer_Load);
             this.grbgender.ResumeLayout(false);
             this.grbgender.PerformLayout();
@@ -259,5 +281,6 @@
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Label label1;
     }
 }

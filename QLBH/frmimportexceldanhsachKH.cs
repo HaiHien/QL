@@ -8,14 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data.SQLite;
-
+using Excel = Microsoft.Office.Interop.Excel; 
 namespace QLBH
 {
-    public partial class frmimportexcellistcustomer : Form
+    public partial class frmimportexceldanhsachKH : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         string filename;
-        public frmimportexcellistcustomer()
+        public frmimportexceldanhsachKH()
         {
             InitializeComponent();
         }
@@ -41,56 +41,53 @@ namespace QLBH
         private DataTable ReadDataFromExcelFile()
         {
             string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filename.Trim() + ";Extended Properties=Excel 8.0";
-            // Tạo đối tượng kết nối
             OleDbConnection oledbConn = new OleDbConnection(connectionString);
             DataTable data = null;
             try
             {
-                // Mở kết nối
                 oledbConn.Open();
-
-                // Tạo đối tượng OleDBCommand và query data từ sheet có tên "Sheet1"
                 OleDbCommand cmd = new OleDbCommand("SELECT * FROM [Sheet1$]", oledbConn);
-
-                // Tạo đối tượng OleDbDataAdapter để thực thi việc query lấy dữ liệu từ tập tin excel
                 OleDbDataAdapter oleda = new OleDbDataAdapter();
 
                 oleda.SelectCommand = cmd;
-
-                // Tạo đối tượng DataSet để hứng dữ liệu từ tập tin excel
                 DataSet ds = new DataSet();
-
-                // Đổ đữ liệu từ tập excel vào DataSet
                 oleda.Fill(ds);
 
                 data = ds.Tables[0];
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Bạn Phải Mở File Excel Cần Import!");
             }
             finally
             {
-                // Đóng chuỗi kết nối
                 oledbConn.Close();
             }
             return data;
         }
         private void ImportIntoDatabase(DataTable data)
         {
+            OleDbConnection MyConnection;
+            OleDbCommand myCommand = new System.Data.OleDb.OleDbCommand();
+            MyConnection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + txtpath.Text.Trim() + ";Extended Properties=Excel 8.0");
             if (data == null || data.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu để import");
                 return;
             }
-            string name, address, gender;
-            int phone;
-            try
-            {
+            string name, address, gender,phone,result;
                 for (int i = 0; i < data.Rows.Count; i++)
                 {
                     name = data.Rows[i]["Name"].ToString().Trim();
-                    phone = int.Parse(data.Rows[i]["Phone"].ToString().Trim());
+                    phone = data.Rows[i]["Phone"].ToString().Trim();
+                    result = data.Rows[i]["Result"].ToString().Trim();
+                    try
+                    {
+                        int p = int.Parse(phone);
+                    }
+                    catch (Exception)
+                    {
+                    }
                     gender = data.Rows[i]["Gender"].ToString().Trim();
                     address = data.Rows[i]["Address"].ToString().Trim();
                     if (gender.Equals("Nam") || gender.Equals("nam") || gender.Equals("Nữ") || gender.Equals("nữ"))
@@ -105,11 +102,23 @@ namespace QLBH
                             cmd.Parameters.AddWithValue("@gender", gender);
                             cmd.Parameters.AddWithValue("@address", address);
                             cmd.ExecuteNonQuery();
-                        }
+                            if (result.Trim().Length < 1)
+                                try
+                                {
+
+                                    MyConnection.Open();
+                                    myCommand.Connection = MyConnection;
+                                    string sqlexcel = "Insert into [Sheet1$] (Result) values('Thành Công')";
+                                    myCommand.CommandText = sqlexcel;
+                                    myCommand.ExecuteNonQuery();
+                                    MyConnection.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
                         catch (Exception)
                         {
-
-                            MessageBox.Show("Error Import Data!");
                         }
                         finally
                         {
@@ -119,29 +128,46 @@ namespace QLBH
                     }
                     else
                     {
-                        MessageBox.Show("Error import does not exist!");
+                            try
+                            {
+
+                                MyConnection.Open();
+                                myCommand.Connection = MyConnection;
+                                string sqlexcel = "Insert into [Sheet1$] (Result) values('Thất Bại')";
+                                myCommand.CommandText = sqlexcel;
+                                myCommand.ExecuteNonQuery();
+                                MyConnection.Close();
+                            }
+                            catch (Exception ex)
+                            {
+                            }
+                        
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Import Data!");
-            }
-
-            MessageBox.Show("Kết thúc import");
+                MessageBox.Show("Kết Thúc Import!");
         }
         private void btnimport_Click(object sender, EventArgs e)
         {
-            if (!ValidInput())
-                return;
+            if (txtpath.Text.Trim().Length > 0)
+            {
+                if (!ValidInput())
+                    return;
+                DataTable data = ReadDataFromExcelFile();
+                ImportIntoDatabase(data);
+                this.Hide();
+                frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Phải Chọn Đưuòng Dẫn");
+            }
+        }
 
-            // Đọc dữ liệu từ tập tin excel trả về DataTable
-            DataTable data = ReadDataFromExcelFile();
-
-            // Import dữ liệu đọc được vào database
-            ImportIntoDatabase(data);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
             this.Hide();
-            frmlistcustomer frm = new frmlistcustomer();
             frm.Show();
         }
     }

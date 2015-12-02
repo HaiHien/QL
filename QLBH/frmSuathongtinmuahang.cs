@@ -10,7 +10,7 @@ using System.Data.SQLite;
 
 namespace QLBH
 {
-    public partial class frmeditshopping : Form
+    public partial class frmSuathongtinmuahang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         public int id;
@@ -22,7 +22,7 @@ namespace QLBH
         public string productname;
         public string money;
         public string purchasedate;
-        public frmeditshopping()
+        public frmSuathongtinmuahang()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace QLBH
             string str = "";
             if (pn.Trim().Length == 0)
             {
-                lblp.Text = "must enter the productname";
+                lblp.Text = "Phải Nhập Tên Sản Phẩm!";
                 lblp.Visible = true;
                 str += "n";
             }
@@ -44,7 +44,7 @@ namespace QLBH
             }
             if (mn.Trim().Length == 0)
             {
-                lblm.Text = "must enter the money";
+                lblm.Text = "Phải Nhập Số Tiền!";
                 lblm.Visible = true;
                 str += "p";
             }
@@ -55,12 +55,12 @@ namespace QLBH
             if (str.Trim().Length == 0)
             {
                 Customershopping c = new Customershopping();
-                int i = c.UpdateCustomerShoppingID(id, productname, money);
+                int i = c.UpdateCustomerShoppingID(index, pn, mn);
                 if (i > 0)
                 {
-                    MessageBox.Show("Update OK!");
+                    MessageBox.Show("Sửa Thành Công!");
                     this.Hide();
-                    frmpurchaseinformation frm = new frmpurchaseinformation();
+                    frmThongtinmuahang frm = new frmThongtinmuahang();
                     frm.id = id;
                     frm.name = name;
                     frm.address = address;
@@ -71,7 +71,7 @@ namespace QLBH
                 }
                 else
                 {
-                    MessageBox.Show("Update Not OK!");
+                    MessageBox.Show("Lỗi Không Thể Sửa!");
                 }
                 
             }
@@ -93,7 +93,7 @@ namespace QLBH
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmpurchaseinformation frm = new frmpurchaseinformation();
+            frmThongtinmuahang frm = new frmThongtinmuahang();
             frm.id = index;
             frm.name = name;
             frm.address = address;

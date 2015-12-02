@@ -10,7 +10,7 @@ using System.Data.SQLite;
 
 namespace QLBH
 {
-    public partial class frmaddshopping : Form
+    public partial class frmThemmuahang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         public int index;
@@ -18,7 +18,7 @@ namespace QLBH
         public string phone;
         public string gender;
         public string address;
-        public frmaddshopping()
+        public frmThemmuahang()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace QLBH
             string str="";
             if (productname.Trim().Length == 0)
             {
-                lblp.Text = "must enter the productname";
+                lblp.Text = "Phải Nhập Tên Sản Phẩm!";
                 lblp.Visible = true;
                 str += "n";
             }
@@ -46,7 +46,7 @@ namespace QLBH
             }
             if (money.Trim().Length == 0)
             {
-                lblm.Text = "must enter the money";
+                lblm.Text = "Phải Nhập Số Tiền!";
                 lblm.Visible = true;
                 str += "p";
             }
@@ -60,9 +60,9 @@ namespace QLBH
                 int i = c.AddCustomerShopping(productname, purchasedate, money, index);
                 if (i > 0)
                 {
-                    MessageBox.Show("Insert OK!");
+                    MessageBox.Show("Thêm Mới Thành Công!");
                     this.Hide();
-                    frmpurchaseinformation frm = new frmpurchaseinformation();
+                    frmThongtinmuahang frm = new frmThongtinmuahang();
                     frm.id = index;
                     frm.name = name;
                     frm.address = address;
@@ -73,7 +73,7 @@ namespace QLBH
                 }
                 else
                 {
-                    MessageBox.Show("Insert Not OK!");
+                    MessageBox.Show("Lỗi Không Thể Thêm Mới!");
                 }
              
             }
@@ -88,7 +88,7 @@ namespace QLBH
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmpurchaseinformation frm = new frmpurchaseinformation();
+            frmThongtinmuahang frm = new frmThongtinmuahang();
             frm.id = index;
             frm.name = name;
             frm.address = address;

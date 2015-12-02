@@ -11,12 +11,16 @@ using System.Data.OleDb;
 
 namespace QLBH
 {
-    public partial class frmimportexcelcustomershopping : Form
+    public partial class frmimportexcelthongtinmuahang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         string filename;
-
-        public frmimportexcelcustomershopping()
+        public int id;
+        public string name;
+        public string phone;
+        public string gender;
+        public string address;
+        public frmimportexcelthongtinmuahang()
         {
             InitializeComponent();
         }
@@ -41,39 +45,38 @@ namespace QLBH
         }
         private DataTable ReadDataFromExcelFile()
         {
-            string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filename.Trim() + ";Extended Properties=Excel 8.0";
-            // Tạo đối tượng kết nối
-            OleDbConnection oledbConn = new OleDbConnection(connectionString);
             DataTable data = null;
             try
             {
-                // Mở kết nối
-                oledbConn.Open();
+                string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filename.Trim() + ";Extended Properties=Excel 8.0";
+                OleDbConnection oledbConn = new OleDbConnection(connectionString);
+                try
+                {
+                    oledbConn.Open();
+                    OleDbCommand cmd = new OleDbCommand("SELECT * FROM [Sheet1$]", oledbConn);
+                    OleDbDataAdapter oleda = new OleDbDataAdapter();
 
-                // Tạo đối tượng OleDBCommand và query data từ sheet có tên "Sheet1"
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM [Sheet1$]", oledbConn);
+                    oleda.SelectCommand = cmd;
 
-                // Tạo đối tượng OleDbDataAdapter để thực thi việc query lấy dữ liệu từ tập tin excel
-                OleDbDataAdapter oleda = new OleDbDataAdapter();
+                    DataSet ds = new DataSet();
 
-                oleda.SelectCommand = cmd;
+                    oleda.Fill(ds);
 
-                // Tạo đối tượng DataSet để hứng dữ liệu từ tập tin excel
-                DataSet ds = new DataSet();
-
-                // Đổ đữ liệu từ tập excel vào DataSet
-                oleda.Fill(ds);
-
-                data = ds.Tables[0];
+                    data = ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bạn Phải Mở File Excel Cần Import!");
+                }
+                finally
+                {
+                    oledbConn.Close();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                // Đóng chuỗi kết nối
-                oledbConn.Close();
+
+                MessageBox.Show("Lỗi Import Dữ Liệu!");
             }
             return data;
         }
@@ -81,7 +84,7 @@ namespace QLBH
         {
             if (data == null || data.Rows.Count == 0)
             {
-                MessageBox.Show("Not Data import!");
+                MessageBox.Show("Không Có Dữ Liệu Import!");
                 return;
             }
             string productname;
@@ -114,7 +117,7 @@ namespace QLBH
                         catch (Exception)
                         {
 
-                            MessageBox.Show("Error Import Data!");
+                            MessageBox.Show("Lỗi Không Thể Import Dữ Liệu!");
                         }
                         finally
                         {
@@ -124,36 +127,52 @@ namespace QLBH
                     }
                     else
                     {
-                        MessageBox.Show("IDcustomer does not exist");
+                        MessageBox.Show("IDcustomer Không Tồn Tại");
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Import Data!");
+                MessageBox.Show("Lỗi Không Thể Import Dữ Liệu!");
             }
 
-            MessageBox.Show("Kết thúc import");
+            MessageBox.Show("Kết Thúc Import");
         }
 
         private void btnimport_Click(object sender, EventArgs e)
         {
-            if (!ValidInput())
-                return;
-
-            // Đọc dữ liệu từ tập tin excel trả về DataTable
-            DataTable data = ReadDataFromExcelFile();
-
-            // Import dữ liệu đọc được vào database
-            ImportIntoDatabase(data);
-            this.Hide();
-            frmlistcustomer frm = new frmlistcustomer();
-            frm.Show();
+            if (txtpath.Text.Trim().Length > 0)
+            {
+                if (!ValidInput())
+                    return;
+                DataTable data = ReadDataFromExcelFile();
+                ImportIntoDatabase(data);
+                this.Hide();
+                frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn Phải Chọn Đưuòng Dẫn");
+            }
         }
 
         private void frmimportexcelcustomershopping_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmThongtinmuahang frm = new frmThongtinmuahang();
+            frm.id = id;
+            frm.name = name;
+            frm.address = address;
+            frm.gender = gender;
+            frm.phone = phone;
+            frm.LoadData();
+            frm.Show();
         }
     }
 }

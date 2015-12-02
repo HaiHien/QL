@@ -32,6 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="SQLite.Designer, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -53,77 +57,77 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customershopping.cs" />
-    <Compile Include="frmaddshopping.cs">
+    <Compile Include="frmThemmuahang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmaddshopping.Designer.cs">
-      <DependentUpon>frmaddshopping.cs</DependentUpon>
+    <Compile Include="frmThemmuahang.Designer.cs">
+      <DependentUpon>frmThemmuahang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmeditshopping.cs">
+    <Compile Include="frmSuathongtinmuahang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmeditshopping.Designer.cs">
-      <DependentUpon>frmeditshopping.cs</DependentUpon>
+    <Compile Include="frmSuathongtinmuahang.Designer.cs">
+      <DependentUpon>frmSuathongtinmuahang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmimportexcelcustomershopping.cs">
+    <Compile Include="frmimportexcelthongtinmuahang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmimportexcelcustomershopping.Designer.cs">
-      <DependentUpon>frmimportexcelcustomershopping.cs</DependentUpon>
+    <Compile Include="frmimportexcelthongtinmuahang.Designer.cs">
+      <DependentUpon>frmimportexcelthongtinmuahang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmlistcustomer.cs">
+    <Compile Include="frmDanhsachkhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmlistcustomer.Designer.cs">
-      <DependentUpon>frmlistcustomer.cs</DependentUpon>
+    <Compile Include="frmDanhsachkhachhang.Designer.cs">
+      <DependentUpon>frmDanhsachkhachhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmeditcustomer.cs">
+    <Compile Include="frmSuathongtinkhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmeditcustomer.Designer.cs">
-      <DependentUpon>frmeditcustomer.cs</DependentUpon>
+    <Compile Include="frmSuathongtinkhachhang.Designer.cs">
+      <DependentUpon>frmSuathongtinkhachhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmpurchaseinformation.cs">
+    <Compile Include="frmThongtinmuahang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmpurchaseinformation.Designer.cs">
-      <DependentUpon>frmpurchaseinformation.cs</DependentUpon>
+    <Compile Include="frmThongtinmuahang.Designer.cs">
+      <DependentUpon>frmThongtinmuahang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmimportexcellistcustomer.cs">
+    <Compile Include="frmimportexceldanhsachKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmimportexcellistcustomer.Designer.cs">
-      <DependentUpon>frmimportexcellistcustomer.cs</DependentUpon>
+    <Compile Include="frmimportexceldanhsachKH.Designer.cs">
+      <DependentUpon>frmimportexceldanhsachKH.cs</DependentUpon>
     </Compile>
     <Compile Include="ListCustomer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmaddshopping.resx">
-      <DependentUpon>frmaddshopping.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemmuahang.resx">
+      <DependentUpon>frmThemmuahang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmeditshopping.resx">
-      <DependentUpon>frmeditshopping.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuathongtinmuahang.resx">
+      <DependentUpon>frmSuathongtinmuahang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmimportexcelcustomershopping.resx">
-      <DependentUpon>frmimportexcelcustomershopping.cs</DependentUpon>
+    <EmbeddedResource Include="frmimportexcelthongtinmuahang.resx">
+      <DependentUpon>frmimportexcelthongtinmuahang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmlistcustomer.resx">
-      <DependentUpon>frmlistcustomer.cs</DependentUpon>
+    <EmbeddedResource Include="frmDanhsachkhachhang.resx">
+      <DependentUpon>frmDanhsachkhachhang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmeditcustomer.resx">
-      <DependentUpon>frmeditcustomer.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuathongtinkhachhang.resx">
+      <DependentUpon>frmSuathongtinkhachhang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmpurchaseinformation.resx">
-      <DependentUpon>frmpurchaseinformation.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongtinmuahang.resx">
+      <DependentUpon>frmThongtinmuahang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmimportexcellistcustomer.resx">
-      <DependentUpon>frmimportexcellistcustomer.cs</DependentUpon>
+    <EmbeddedResource Include="frmimportexceldanhsachKH.resx">
+      <DependentUpon>frmimportexceldanhsachKH.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,8 +135,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmaddcustomer.resx">
-      <DependentUpon>frmaddcustomer.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemkhachhang.resx">
+      <DependentUpon>frmThemkhachhang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -148,11 +152,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="frmaddcustomer.cs">
+    <Compile Include="frmThemkhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmaddcustomer.Designer.cs">
-      <DependentUpon>frmaddcustomer.cs</DependentUpon>
+    <Compile Include="frmThemkhachhang.Designer.cs">
+      <DependentUpon>frmThemkhachhang.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

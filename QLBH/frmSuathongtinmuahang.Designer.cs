@@ -1,6 +1,6 @@
 ﻿namespace QLBH
 {
-    partial class frmeditshopping
+    partial class frmSuathongtinmuahang
     {
         /// <summary>
         /// Required designer variable.
@@ -38,34 +38,38 @@
             this.txtproductname = new System.Windows.Forms.TextBox();
             this.lblpurchasedate = new System.Windows.Forms.Label();
             this.lblproductname = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(393, 243);
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Location = new System.Drawing.Point(219, 229);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(84, 32);
             this.btncancel.TabIndex = 33;
-            this.btncancel.Text = "Cancel";
+            this.btncancel.Text = "Thoát";
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(222, 243);
+            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Location = new System.Drawing.Point(107, 229);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(84, 32);
             this.btnsave.TabIndex = 32;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "Lưu";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // txtmoney
             // 
-            this.txtmoney.Location = new System.Drawing.Point(196, 180);
+            this.txtmoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmoney.Location = new System.Drawing.Point(148, 179);
             this.txtmoney.Multiline = true;
             this.txtmoney.Name = "txtmoney";
-            this.txtmoney.Size = new System.Drawing.Size(224, 26);
+            this.txtmoney.Size = new System.Drawing.Size(224, 28);
             this.txtmoney.TabIndex = 31;
             this.txtmoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmoney_KeyPress);
             // 
@@ -73,18 +77,18 @@
             // 
             this.lblmoney.AutoSize = true;
             this.lblmoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmoney.Location = new System.Drawing.Point(64, 187);
+            this.lblmoney.Location = new System.Drawing.Point(12, 187);
             this.lblmoney.Name = "lblmoney";
-            this.lblmoney.Size = new System.Drawing.Size(53, 18);
+            this.lblmoney.Size = new System.Drawing.Size(67, 18);
             this.lblmoney.TabIndex = 30;
-            this.lblmoney.Text = "Money";
+            this.lblmoney.Text = "Số Tiền :";
             // 
             // lblm
             // 
             this.lblm.AutoSize = true;
             this.lblm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblm.ForeColor = System.Drawing.Color.Red;
-            this.lblm.Location = new System.Drawing.Point(443, 187);
+            this.lblm.Location = new System.Drawing.Point(145, 157);
             this.lblm.Name = "lblm";
             this.lblm.Size = new System.Drawing.Size(46, 18);
             this.lblm.TabIndex = 29;
@@ -96,7 +100,7 @@
             this.lblp.AutoSize = true;
             this.lblp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblp.ForeColor = System.Drawing.Color.Red;
-            this.lblp.Location = new System.Drawing.Point(443, 78);
+            this.lblp.Location = new System.Drawing.Point(145, 99);
             this.lblp.Name = "lblp";
             this.lblp.Size = new System.Drawing.Size(46, 18);
             this.lblp.TabIndex = 28;
@@ -106,45 +110,59 @@
             // txtpurchasedate
             // 
             this.txtpurchasedate.Enabled = false;
-            this.txtpurchasedate.Location = new System.Drawing.Point(196, 129);
+            this.txtpurchasedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpurchasedate.Location = new System.Drawing.Point(149, 123);
             this.txtpurchasedate.Multiline = true;
             this.txtpurchasedate.Name = "txtpurchasedate";
-            this.txtpurchasedate.Size = new System.Drawing.Size(224, 26);
+            this.txtpurchasedate.Size = new System.Drawing.Size(224, 28);
             this.txtpurchasedate.TabIndex = 27;
             // 
             // txtproductname
             // 
-            this.txtproductname.Location = new System.Drawing.Point(196, 71);
+            this.txtproductname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtproductname.Location = new System.Drawing.Point(148, 70);
             this.txtproductname.Multiline = true;
             this.txtproductname.Name = "txtproductname";
-            this.txtproductname.Size = new System.Drawing.Size(224, 26);
+            this.txtproductname.Size = new System.Drawing.Size(224, 28);
             this.txtproductname.TabIndex = 26;
             // 
             // lblpurchasedate
             // 
             this.lblpurchasedate.AutoSize = true;
             this.lblpurchasedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpurchasedate.Location = new System.Drawing.Point(64, 135);
+            this.lblpurchasedate.Location = new System.Drawing.Point(12, 131);
             this.lblpurchasedate.Name = "lblpurchasedate";
-            this.lblpurchasedate.Size = new System.Drawing.Size(107, 18);
+            this.lblpurchasedate.Size = new System.Drawing.Size(83, 18);
             this.lblpurchasedate.TabIndex = 25;
-            this.lblpurchasedate.Text = "Purchasedate :";
+            this.lblpurchasedate.Text = "Ngày Mua :";
             // 
             // lblproductname
             // 
             this.lblproductname.AutoSize = true;
             this.lblproductname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblproductname.Location = new System.Drawing.Point(64, 78);
+            this.lblproductname.Location = new System.Drawing.Point(12, 78);
             this.lblproductname.Name = "lblproductname";
-            this.lblproductname.Size = new System.Drawing.Size(108, 18);
+            this.lblproductname.Size = new System.Drawing.Size(114, 18);
             this.lblproductname.TabIndex = 24;
-            this.lblproductname.Text = "ProductName :";
+            this.lblproductname.Text = "Tên Sản Phẩm :";
             // 
-            // frmeditshopping
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 24);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Sửa Thông Tin Mua Hàng";
+            // 
+            // frmSuathongtinmuahang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 359);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(415, 301);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.txtmoney);
@@ -155,8 +173,9 @@
             this.Controls.Add(this.txtproductname);
             this.Controls.Add(this.lblpurchasedate);
             this.Controls.Add(this.lblproductname);
-            this.Name = "frmeditshopping";
-            this.Text = "frmeditshopping";
+            this.Name = "frmSuathongtinmuahang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sửa Thông Tin Mua Hàng";
             this.Load += new System.EventHandler(this.frmeditshopping_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,5 +194,6 @@
         private System.Windows.Forms.TextBox txtproductname;
         private System.Windows.Forms.Label lblpurchasedate;
         private System.Windows.Forms.Label lblproductname;
+        private System.Windows.Forms.Label label1;
     }
 }

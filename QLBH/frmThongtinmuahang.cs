@@ -10,7 +10,7 @@ using System.Data.SQLite;
 
 namespace QLBH
 {
-    public partial class frmpurchaseinformation : Form
+    public partial class frmThongtinmuahang : Form
     {
         SQLiteConnection conn = new SQLiteConnection(@"data source=D:\web1\QLBH.s3db");
         DataTable dt;
@@ -19,7 +19,7 @@ namespace QLBH
         public string phone;
         public string gender;
         public string address;
-        public frmpurchaseinformation()
+        public frmThongtinmuahang()
         {
             InitializeComponent();
         }
@@ -28,11 +28,11 @@ namespace QLBH
         {
             txtname.Text = name;
             txtphone.Text = phone;
-            if (gender.Trim().Equals("Nam"))
+            if (gender.Trim().Equals("Nam") || gender.Trim().Equals("nam"))
             {
                 rdbmale.Checked=true;
             }
-            else if (gender.Trim().Equals("Nữ"))
+            else if (gender.Trim().Equals("Nữ") || gender.Trim().Equals("nữ"))
             {
                 rdbfemale.Checked = true;
             }
@@ -61,7 +61,7 @@ namespace QLBH
             catch (Exception)
             {
 
-                MessageBox.Show("error");
+                MessageBox.Show("Lỗi Không Thể Load Dữ Liệu!");
             }
             finally
             {
@@ -72,7 +72,7 @@ namespace QLBH
 
         private void Btndelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("you sure you want to delete?", "notice..", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn Chắc Chăn Muốn Xóa?", "Thông Báo..", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -81,18 +81,18 @@ namespace QLBH
                     int i = c.DeleteCustomerShoppingID(int.Parse(index));
                     if (i > 0)
                     {
-                        MessageBox.Show("Delete Ok!");
+                        MessageBox.Show("Xóa Thành Công!");
                         LoadData();
                     }
                     else
                     {
-                        MessageBox.Show("Delete Not Ok!");
+                        MessageBox.Show("Lỗi Không Thể Xóa!");
                     }
                 }
                 catch (Exception)
                 {
 
-                    MessageBox.Show("Delete Not Ok!");
+                    MessageBox.Show("Không Có Dữ Liệu!");
                 }
                 
                 }
@@ -100,7 +100,7 @@ namespace QLBH
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            frmaddshopping frm = new frmaddshopping();
+            frmThemmuahang frm = new frmThemmuahang();
             frm.index = id;
             frm.name = name;
             frm.phone = phone;
@@ -114,7 +114,7 @@ namespace QLBH
         {
             try
             {
-                frmeditshopping frm = new frmeditshopping();
+                frmSuathongtinmuahang frm = new frmSuathongtinmuahang();
                 frm.purchasedate = dtgmuahang.SelectedRows[0].Cells[2].Value.ToString();
                 frm.productname = dtgmuahang.SelectedRows[0].Cells[1].Value.ToString();
                 frm.money = dtgmuahang.SelectedRows[0].Cells[3].Value.ToString();
@@ -130,21 +130,26 @@ namespace QLBH
             catch (Exception)
             {
 
-                MessageBox.Show("Not Data!");
+                MessageBox.Show("Không Có Dữ liệu!");
             }
             
         }
 
         private void btnimport_Click(object sender, EventArgs e)
         {
-            frmimportexcelcustomershopping frm = new frmimportexcelcustomershopping();
+            frmimportexcelthongtinmuahang frm = new frmimportexcelthongtinmuahang();
+            frm.id = id;
+            frm.name = name;
+            frm.phone = phone;
+            frm.gender = gender;
+            frm.address = address;
             this.Hide();
             frm.Show();
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            frmlistcustomer frm = new frmlistcustomer();
+            frmDanhsachkhachhang frm = new frmDanhsachkhachhang();
             this.Hide();
             frm.Show();
         }
